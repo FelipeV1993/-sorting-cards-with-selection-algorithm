@@ -134,8 +134,11 @@ const selectSort = (cartasArray) => {
       for(let i = min+1; i < newCardsArr.length; i++) {
         if (newCardsArr[min].numero > newCardsArr[i].numero) {
           let aux = newCardsArr[min].numero;
+          let aux2 = newCardsArr[min].pinta;
           newCardsArr[min].numero = newCardsArr[i].numero;
+          newCardsArr[min].pinta = newCardsArr[i].pinta;
           newCardsArr[i].numero = aux;
+          newCardsArr[i].pinta = aux2;
           filaNumero++
           crearCartas(newCardsArr, sort,filaNumero);
         }
@@ -154,8 +157,11 @@ const bubbleSort = (cartasArray) => {
       //compare the adjacent positions, if the right one is bigger, we have to swap
       if (newCardsArr[index].numero > newCardsArr[index + 1].numero) {
         let aux = newCardsArr[index].numero;
+        let aux2 = newCardsArr[index].pinta;
         newCardsArr[index].numero = newCardsArr[index + 1].numero;
+        newCardsArr[index].pinta = newCardsArr[index + 1].pinta;
         newCardsArr[index + 1].numero = aux;
+        newCardsArr[index + 1].pinta = aux2;
         filaNumero++
         crearCartas(newCardsArr, sort,filaNumero);
       }
